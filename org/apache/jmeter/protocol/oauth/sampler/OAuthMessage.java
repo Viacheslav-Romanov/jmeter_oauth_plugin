@@ -258,8 +258,7 @@ public class OAuthMessage {
         final Map<String, String> pMap = OAuth.newMap(parameters);
         //todo add a provision to allow/deny empty parameter in signature
         if (pMap.get(OAuth.OAUTH_TOKEN) == null
-                && accessor.accessToken != null
-                && (!URL.toLowerCase().contains("oauth/requesttoken"))) {
+                && accessor.accessToken != null) {
             addParameter(OAuth.OAUTH_TOKEN, accessor.accessToken);
         }
         final OAuthConsumer consumer = accessor.consumer;
